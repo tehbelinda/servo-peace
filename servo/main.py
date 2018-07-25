@@ -9,7 +9,7 @@ MIN_DUTY = 27
 MAX_DUTY = 136
 
 PEACEFUL_DUTY = 33
-ANNOYING_DUTY = 128
+ANNOYING_DUTY = 83
 
 serve_peace = False
 
