@@ -13,12 +13,12 @@ ANNOYING_DUTY = 83
 
 serve_peace = False
 
-HOST = "http://robotic.ventures:3001"
+HOST = "http://54.218.3.161:3001"
 
 def retrieve_url(url):
     resp = None
     try:
-        print("Getting url", url)
+        #print("Getting url", url)
         resp = get(url)
         value = resp.json()
         print(value)

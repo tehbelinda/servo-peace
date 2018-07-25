@@ -4,12 +4,12 @@ import utime
 from machine import Pin
 from urequests import get, post
 
-HOST = "http://robotic.ventures:3001"
+HOST = "http://54.218.3.161:3001"
 
 NUM_LEDS = 32
-# Color settings at 100 not 255 because it's really bright!
-GREEN = (0, 100, 0)
-RED = (100, 0, 0)
+# Color settings not at 255 because it's really bright!
+GREEN = (0, 40, 0)
+RED = (40, 0, 0)
 
 serve_peace = None
 
@@ -67,12 +67,12 @@ if __name__ == "__main__":
     button = Pin(22, Pin.IN, Pin.PULL_UP)
     button.irq(trigger=Pin.IRQ_FALLING, handler=button_change)
 
-    color_leds((50, 50, 50))
+    color_leds((20, 20, 20))
 
     start = utime.ticks_ms()
     while True:
         # Poll for current status
-        if utime.ticks_diff(utime.ticks_ms(), start) > 300:
+        if utime.ticks_diff(utime.ticks_ms(), start) > 600:
             res = retrieve_url(HOST + "/peace")
             if "error" in res:
                 print("Error", res["error"])
